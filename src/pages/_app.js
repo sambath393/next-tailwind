@@ -1,5 +1,6 @@
 import React from 'react';
 import { RecoilRoot } from 'recoil';
+import '../utilities/i18n';
 import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }) {
