@@ -1,6 +1,5 @@
 const Pixel = () => {
   const pixelId = process.env.NEXT_PUBLIC_FB_PIXEL;
-  if (!pixelId) return null;
 
   const pixelCode = `
     !function(f,b,e,v,n,t,s)

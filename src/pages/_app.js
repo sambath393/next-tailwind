@@ -13,27 +13,21 @@ const config = {
 function MyApp({ Component, pageProps }) {
   const Layout = Component.Layout ? Component.Layout : React.Fragment;
 
-  let App = (
-    <>
+  let appElem = (
+    <Layout>
       <Head>
         <GATag />
         <FbPixel />
       </Head>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </>
+      <Component {...pageProps} />
+    </Layout>
   );
 
   if (config.enableRecoil) {
-    App = (
-      <RecoilRoot>
-        <App />
-      </RecoilRoot>
-    );
+    appElem = <RecoilRoot>{appElem}</RecoilRoot>;
   }
 
-  return <App />;
+  return appElem;
 }
 
 export default MyApp;

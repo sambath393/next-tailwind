@@ -1,6 +1,5 @@
 const GATag = () => {
   const GAId = process.env.NEXT_PUBLIC_GA_ID;
-  if (!GAId) return null;
 
   const GACode = `
     window.dataLayer = window.dataLayer || [];
