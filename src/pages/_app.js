@@ -6,10 +6,15 @@ import '../styles/globals.css';
 import GATag from '../components/GATag';
 import FbPixel from '../components/FbPixel';
 
+const config = {
+  enableRecoil: false,
+};
+
 function MyApp({ Component, pageProps }) {
   const Layout = Component.Layout ? Component.Layout : React.Fragment;
-  return (
-    <RecoilRoot>
+
+  let App = (
+    <>
       <Head>
         <GATag />
         <FbPixel />
@@ -17,8 +22,18 @@ function MyApp({ Component, pageProps }) {
       <Layout>
         <Component {...pageProps} />
       </Layout>
-    </RecoilRoot>
+    </>
   );
+
+  if (config.enableRecoil) {
+    App = (
+      <RecoilRoot>
+        <App />
+      </RecoilRoot>
+    );
+  }
+
+  return <App />;
 }
 
 export default MyApp;
