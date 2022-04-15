@@ -4,8 +4,7 @@ import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import { isDebug } from './dev';
 
-import enCommon from '../locales/en/common.json';
-import zhCommon from '../locales/zh/common.json';
+import { enCommon, zhCommon } from '../locales';
 
 i18n
   .use(LanguageDetector)
